@@ -1,5 +1,5 @@
 
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import img1 from '../assets/img1.png'
 import img2 from '../assets/img2.png'
 import img3 from '../assets/img3.png'
@@ -8,17 +8,17 @@ import sport1 from '../assets/sport1.png'
 import sport2 from '../assets/sport2.png'
 import { ThemeContext } from '../App'
 const Home = () => {
-    const { theme, toggleTheme } = useContext(ThemeContext)
-    return <div className='dark:bg-slate-700 pb-10'>
+    const { theme, toggleTheme } = useContext(ThemeContext);
+
+
+    return <div className='dark:bg-slate-700 pb-10 pt-10'>
 
         <div class='font-semibold text-2xl px-4 md:px-20  mx-4 md:mx-20  dark:text-white'>
             <div class='flex justify-between'>
                 Sports
-                <div class='flex'>
-                    <button class='' onClick={toggleTheme} >
-                        <i class="bi bi-moon-stars-fill"></i>
-                    </button>
-                </div>
+                <button className='' onClick={toggleTheme}>
+                    <i className={`bi ${theme === 'dark' ? "bi-moon-stars-fill " : " bi-sun-fill"}`} ></i>
+                </button>
             </div>
         </div>
         <div class='px-4 md:px-20 mt-5 flex flex-wrap justify-evenly dark:text-white'>
